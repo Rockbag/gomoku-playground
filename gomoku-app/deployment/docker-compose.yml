@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  database:
+    image: postgres:10
+    environment:
+      POSTGRES_PASSWORD: gomoku
+      POSTGRES_USER: gomoku
+      POSTGRES_DB: gomoku
+    ports: 
+      - "5432:5432"
+  gomoku-backend:
+    image: gomoku-backend:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    command: bash -c "/opt/gomoku/gomoku-app/backend/scripts/wait_for_it.sh database:5432 && bash /opt/gomoku/gomoku-app/backend/scripts/start_server.sh"
+  gomoku-frontend:
+    image: gomoku-frontend:latest
+    ports:
+      - "5000:5000"
+ 

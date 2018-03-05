@@ -1,0 +1,4 @@
+virtualenv
+*build/
+gomoku-app/frontend/npm-debug.log
+
