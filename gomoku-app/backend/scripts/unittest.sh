@@ -7,5 +7,5 @@ if [ ! -f ./manage.py ]; then
     exit 1
 fi
 
-./manage.py test --settings=backend.settings  --configuration=Test
+./manage.py test --settings=settings  --configuration=Test
 

@@ -18,7 +18,7 @@ class UserRegistrationTestCase(TestCase):
         u = User.objects.get_by_natural_key('john.doe@test.com')
         self.assertIsNotNone(u)
 
-    @patch('backend.api.user.views.User.objects.create_user', side_effect=Exception())
+    @patch('api.user.views.User.objects.create_user', side_effect=Exception())
     def test_error_is_shown(self, create_user):
         expected_reponse_data = {'status': 'error',
                                  'error_message': 'Unexpected error while creating user'}

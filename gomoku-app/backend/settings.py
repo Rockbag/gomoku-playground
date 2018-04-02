@@ -36,6 +36,7 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'api'
     ]
 
     MIDDLEWARE = [
@@ -48,7 +49,7 @@ class Dev(Configuration):
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ]
 
-    ROOT_URLCONF = 'backend.urls'
+    ROOT_URLCONF = 'urls'
 
     TEMPLATES = [
         {
@@ -66,7 +67,7 @@ class Dev(Configuration):
         },
     ]
 
-    WSGI_APPLICATION = 'backend.wsgi.application'
+    WSGI_APPLICATION = '.wsgi.application'
 
 
     # Database
