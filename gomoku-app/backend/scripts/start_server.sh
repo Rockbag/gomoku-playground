@@ -1,4 +1,4 @@
-set -euo pipefail
+set -euox pipefail
 
 cd /opt/gomoku/gomoku-app/backend
 python3 manage.py migrate
